@@ -1,10 +1,11 @@
 body {
         margin: 0;
         font-family: 'Poppins', sans-serif;
-        background-image: linear-gradient(to bottom, #FF9500, #FFD699, #FFFFFF);
         display: flex;
         flex-direction: column;
         min-height: 100vh;
+        transition: background 0.5s;
+        background: linear-gradient(135deg, #FF9500, #FFD699, #FFFFFF); /* fundo claro inicial */
     }
 
     h1 {
@@ -15,7 +16,7 @@ body {
     }
 
     .meses {
-        margin-bottom: 3px;
+        margin-bottom: 10px;
         display: grid;
         grid-template-columns: repeat(3, 200px); 
         gap: 17px;
@@ -29,12 +30,15 @@ body {
         overflow: hidden;
         background-color: white;
         border-radius: 10px;
-        box-shadow: rgba(0,0,0,0.25) 0px 10px 20px;
+        box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, 
+                    rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, 
+                    rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
         display: flex;
         justify-content: center;
         align-items: center;
         aspect-ratio: 1 / 1;
         transition: transform 0.2s;
+        cursor: pointer;
     }
 
     .mes a {
@@ -75,7 +79,88 @@ body {
     @media (max-width: 700px) {
         .meses {
             grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
-            gap: 15px;
-            padding: 20px;
+            gap: 10px;
+            padding: 10px;
+        }
+    }
+
+    /* Botão de tema com texto */
+    .theme-toggle-container {
+        position: fixed;
+        top: 20px;
+        right: 20px;
+        display: flex;
+        align-items: center;
+        background: #fff;
+        padding: 5px 10px;
+        border-radius: 25px;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+        cursor: pointer;
+        transition: all 0.3s;
+        z-index: 10;
+    }
+
+    /* Caixa do toggle */
+    .theme-toggle {
+        position: relative;
+        width: 60px;
+        height: 30px;
+        background: #FFD580; /* amarelo claro no modo claro */
+        border-radius: 30px;
+        margin-right: 8px;
+        cursor: pointer;
+        transition: background 0.3s;
+        overflow: hidden;
+    }
+
+    /* Bolinha que desliza */
+    .toggle-icon {
+        position: absolute;
+        top: 3px;
+        left: 3px;
+        width: 24px;
+        height: 24px;
+        border-radius: 50%;
+        background: #fff;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 14px;
+        transition: all 0.3s ease;
+    }
+
+    /* Texto do botão */
+    .theme-toggle-container span {
+        font-size: 14px;
+        font-weight: 500;
+        color: #333;
+    }
+
+    /* Efeitos hover */
+    .theme-toggle-container:hover {
+         transform: scale(1.05);
+    }
+
+    /* Dark mode no fundo */
+    .dark-mode {
+        background: linear-gradient(135deg, #2b2b2b, #6b48ff);
+    }
+
+    /* Dark mode no toggle */
+    .dark-mode .theme-toggle {
+        background: #6b48ff; /* roxo no modo escuro */
+    }
+
+    .dark-mode .toggle-icon {
+        left: 33px; /* desliza a bolinha pra direita */
+    }
+
+    @media (max-width: 500px) {
+        .theme-toggle-container {
+            top: auto;
+            padding: 0.1px;
+            bottom: 20px;
+            right: 20px;
+            padding-right: 10px;
         }
     }
