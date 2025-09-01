@@ -6,24 +6,48 @@
 <link rel="stylesheet" href="Estilo/style.css">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Cadastro Cursos Presenciais</title>
-
 </head>
 <body>
     <h1>Cadastro Cursos Presenciais</h1>
-    <div class="meses">
-        <div class="mes"><a href="Meses/Janeiro/Janeiro.html" target="_blank">Janeiro</a></div>
-        <div class="mes"><a href="Meses/Fevereiro/Fevereiro.html" target="_blank">Fevereiro</a></div>
-        <div class="mes"><a href="Meses/Março/Março.html" target="_blank">Março</a></div>
-        <div class="mes"><a href="Meses/Abril/Abril.html" target="_blank">Abril</a></div>
-        <div class="mes"><a href="Meses/Maio/Maio.html" target="_blank">Maio</a></div>
-        <div class="mes"><a href="Meses/Junho/Junho.html" target="_blank">Junho</a></div>
-        <div class="mes"><a href="Meses/Julho/Julho.html" target="_blank">Julho</a></div>
-        <div class="mes"><a href="Meses/Agosto/Agosto.html" target="_blank">Agosto</a></div>
-        <div class="mes"><a href="Meses/Setembro/Setembro.html" target="_blank">Setembro</a></div>
-        <div class="mes"><a href="Meses/Outubro/Outubro.html" target="_blank">Outubro</a></div>
-        <div class="mes"><a href="Meses/Novembro/Novembro.html" target="_blank">Novembro</a></div>
-        <div class="mes"><a href="Meses/Dezembro/Dezembro.html" target="_blank">Dezembro</a></div>
+
+<div class="meses">
+    <div class="mes"><a href="Meses/Janeiro/Janeiro.html" target="_blank">Janeiro</a></div>
+    <div class="mes"><a href="Meses/Fevereiro/Fevereiro.html" target="_blank">Fevereiro</a></div>
+    <div class="mes"><a href="Meses/Março/Março.html" target="_blank">Março</a></div>
+    <div class="mes"><a href="Meses/Abril/Abril.html" target="_blank">Abril</a></div>
+    <div class="mes"><a href="Meses/Maio/Maio.html" target="_blank">Maio</a></div>
+    <div class="mes"><a href="Meses/Junho/Junho.html" target="_blank">Junho</a></div>
+    <div class="mes"><a href="Meses/Julho/Julho.html" target="_blank">Julho</a></div>
+    <div class="mes"><a href="Meses/Agosto/Agosto.html" target="_blank">Agosto</a></div>
+    <div class="mes"><a href="Meses/Setembro/Setembro.html" target="_blank">Setembro</a></div>
+    <div class="mes"><a href="Meses/Outubro/Outubro.html" target="_blank">Outubro</a></div>
+    <div class="mes"><a href="Meses/Novembro/Novembro.html" target="_blank">Novembro</a></div>
+    <div class="mes"><a href="Meses/Dezembro/Dezembro.html" target="_blank">Dezembro</a></div>
+</div>
+
+<!-- Botão de tema com texto -->
+<div class="theme-toggle-container">
+    <div class="theme-toggle">
+        <div class="toggle-icon">☀️</div>
     </div>
+    <span>Alterar tema</span>
+</div>
+
+<script>
+    const toggleContainer = document.querySelector('.theme-toggle-container');
+    const icon = toggleContainer.querySelector('.toggle-icon');
+    const body = document.body;
+
+    toggleContainer.addEventListener('click', () => {
+        body.classList.toggle('dark-mode');
+        if(body.classList.contains('dark-mode')) {
+            icon.textContent = '🌙';
+        } else {
+            icon.textContent = '☀️';
+        }
+    });
+</script>
+
 </body>
 </html>
+
